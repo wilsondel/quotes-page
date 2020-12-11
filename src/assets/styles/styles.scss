@@ -1,0 +1,38 @@
+// font family Marck Script
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+$font: 'Marck Script', cursive;
+
+h1 {
+  font-family: $font;
+  font-weight: normal;
+}
+
+small{
+  font-family: $font;
+  font-weight: bold; 
+}
+
+.main {
+  display: grid;
+  width: 100vw;
+  height: 80vh;
+  grid-template: 1fr 1fr / 0.5fr ;
+  gap:10px;
+  grid-template-areas: "quote"
+                       "author" ;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.author { 
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
