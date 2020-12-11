@@ -10,12 +10,22 @@ export const Quote = ()=>{
   
   const [quotes,useQuotes] = useState([])
 
+  const pos_quote = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+  }
+
   useEffect(()=>{
     const getQuote = async () => {
       const response = await fetch (`${API}`)
       const data = await response.json()
-      useQuotes(data[0]['complete_quote'][0])
-      console.log(`This is ${quotes}`);
+      const pos = pos_quote(0,(data[0]['complete_quote']).length+1)
+      let remember_pos =[]
+      // remember_pos.push(pos)
+      useQuotes(data[0]['complete_quote'][pos])
+
+      console.log(`This is ${(data[0]['complete_quote']).length} lenght`);
     }
     getQuote();
     console.log(quotes);
@@ -24,7 +34,7 @@ export const Quote = ()=>{
   return(
     <div className="main">
       <div className="quote">
-        <h1>hello {quotes[0]} </h1>
+        <h1>{quotes[0]} </h1>
       </div>
       <div className="author">
         <small>{quotes[1]}</small>

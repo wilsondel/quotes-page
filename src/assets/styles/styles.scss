@@ -3,6 +3,10 @@
 
 $font: 'Marck Script', cursive;
 
+body {
+  background-color: rgb(252, 252, 247);
+}
+
 h1 {
   font-family: $font;
   font-weight: normal;
@@ -11,6 +15,7 @@ h1 {
 small{
   font-family: $font;
   font-weight: bold; 
+  font-size: 25px;
 }
 
 .main {
