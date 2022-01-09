@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
 
 $font: 'Marck Script', cursive;
+$end-positions:flex-end;
+
 
 body {
   background-color: rgb(252, 252, 247);
@@ -32,12 +34,12 @@ small{
 
 .quote {
   display: flex;
-  align-items: flex-end;
+  align-items: $end-positions;
   height: 100%;
 }
 
 .author { 
   display: flex;
-  justify-content: flex-end;
+  justify-content: $end-positions;
   height: 100%;
 }
